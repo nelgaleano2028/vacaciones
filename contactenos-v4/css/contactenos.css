@@ -1,0 +1,74 @@
+/* Google Fonts Import
+--------------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold|Droid+Serif:regular,italic,bold,bolditalic&subset=latin);
+
+body {
+	font: 1em 'Droid Sans', verdana, sans-serif;
+	font-size: 76%;
+	font-family: "Droid Sans", verdana, sans-serif;
+}
+		
+#form {
+	border: 3px double #eaeaea;
+	background-color: #CCC;
+	padding: 1em;
+	width: 60em;
+	margin: auto;}
+
+#form h2{
+	font-size: 2em;
+	margin: 0 0 0.5em 0;
+	padding: 0;}
+
+#form .campo {
+	border: 1px solid #999;
+	padding: 0.3em;
+	font-size: 1.5em;
+	width:26em;}
+
+#form .error {
+	border: 1px solid #F00;}
+
+#form .com {
+	border: 1px solid #999;
+	padding: 0.3em;
+	font-size: 1.5em;
+	width:26em;
+	height: 10em;
+	font-size: 1.5em;}
+
+#form .com-error {
+	border: 1px solid #F00;}
+
+#form .boton {
+	border: 2px solid #999;
+	padding: 0.3em;
+	font-size: 2em;
+	width: 4em;}
+
+#error {
+	border: 1px dashed #F00;
+	background-color: #FFF;
+	padding: 5px;}
+
+#ok {
+	border: 1px dashed #060;
+	background-color:#FFF;
+	padding: 5px;}
+	    
+.MultiFile-label {
+	margin: 5px 0;
+	padding: 0.3em;
+	border: 1px solid #FF6;
+	background-color: #FFC;
+	width: 98%;
+	font-weight: bold;}
+	
+.MultiFile-remove {
+	float: right;}	   
+
+a.MultiFile-remove  {
+	text-decoration: none;
+	color: #FFF;
+	background-color: #C00;
+	padding: 0 0.2em;}			

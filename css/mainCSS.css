@@ -1,0 +1,234 @@
+
+.close{
+
+background: url(../imagenes/close.png) no-repeat right top;
+display: block;
+width: 19px;
+height: 19px;
+position: absolute;
+top: 10px;
+right: 11px;
+cursor:pointer;
+top: -2px;
+right: -7px;
+
+}
+.close.error{
+width: 11px;
+height:10px;
+top: 9px;
+right: 9px;
+background: url(../imagenes/error_close.png) 0 0 repeat-x;
+
+}
+.close.succes{
+width: 11px;
+height:10px;
+top: 9px;
+right: 9px;
+background: url(../imagenes/succ_close.png) 0 0 repeat-x;
+
+}
+.close.warning{
+width: 11px;
+height:10px;
+top: 9px;
+right: 9px;
+background: url(../imagenes/warn_close.png) 0 0 repeat-x;
+
+}
+.close.tip{
+width: 11px;
+height:10px;
+top: 9px;
+right: 9px;
+background: url(../imagenes/warn_close.png) 0 0 repeat-x;
+
+}
+.close.info{
+width: 11px;
+height:10px;
+top: 9px;
+right: 9px;
+background: url(../imagenes/info_close.png) 0 0 repeat-x;
+
+}
+.close.descarga{
+width: 11px;
+height:10px;
+top: 9px;
+right: 9px;
+background: url(../imagenes/info_close.png) 0 0 repeat-x;
+
+}
+.notify{
+     behavior: url(../PIE/PIE.htc); 
+    width: auto;
+    display: block;
+    position: relative;
+    padding:20px 20px 20px 45px;
+    border-radius:15px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    -moz-box-shadow: 1px 1px 0px #999;
+    -webkit-box-shadow: 1px 1px 0px #999;
+    box-shadow: 1px 1px 0px #999;
+    margin-bottom: 30px;
+    background-color: #333;
+    color: #FFF;                       
+    border:1px solid;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:16px;
+    margin: 2px 15px 0px 25px;
+    z-index: 9999;
+    
+    
+}
+.notify p{
+    padding: 10px;
+    margin: 0;
+}
+.notify.error{
+behavior: url(../PIE/PIE.htc);  
+border-top: 1px solid #F7D0D0;
+border-left: 1px solid #F7D0D0;
+border-bottom: 1px solid #C87676;
+border-right: 1px solid #C87676;
+color: #B31616;
+background-color: #F3C7C7;
+background-image: url('../imagenes/error.png');
+z-index: 9999;
+}
+
+
+div.code{
+    background: #DDD;
+    margin: 10px 10px 20px 20px;
+    padding: 5px;
+    font-family: monospace;
+}
+.notify.succes{
+ behavior: url(../PIE/PIE.htc); 
+    border-top: 1px solid #EDF7D0;
+    border-left: 1px solid #EDF7D0;
+    border-bottom: 1px solid #B7E789;
+    border-right:  1px solid #B7E789;
+    background-color: #DFF3A8;
+   color: #61B316;
+   background-image: url('../imagenes/success.png');
+   z-index: 9999;
+}
+
+
+
+
+
+.notify.warning{
+ behavior: url(../PIE/PIE.htc); 
+border-top: 1px solid #FEFBCD;
+border-left: 1px solid #FEFBCD;
+border-bottom: 1px solid #E6E837;
+border-right: 1px solid #E6E837;
+    background-color: #FEFFB1;
+   color: #E5AC00;
+   background-image: url('../imagenes/warning.png');
+z-index: 9999;
+
+}
+
+.notify.info {
+ behavior: url(../PIE/PIE.htc); 
+border-top: 1px solid #F3FBFF;
+border-left: 1px solid #F3FBFF;
+border-bottom: 1px solid #BEDAE9;
+border-right: 1px solid #BEDAE9;
+
+color: #177FB2;
+background-color: #E0F4FF;
+background-image: url('../imagenes/notices.png');
+z-index: 9999;
+}
+.notify.compra{
+ behavior: url(../PIE/PIE.htc); 
+border-top: 1px solid #D1F7F8;
+border-left: 1px solid #D1F7F8;
+border-bottom: 1px solid #8EABB1;
+border-right: 1px solid #8EABB1;
+color: #426065;
+background-color:  #C4E4E4;
+background-image:url('../imagenes/purchases.png');
+z-index: 9999;
+    
+}
+.notify.imprimir{
+ behavior: url(../PIE/PIE.htc); 
+border-top: 1px solid #DDE9F3;
+border-left: 1px solid #DDE9F3;
+border-right: 1px solid #8FA6B2;
+border-bottom: 1px solid #8FA6B2;
+color: #3F4C6B;
+background-color: #CFDDE8;
+background-image: url('../imagenes/print.png');
+z-index: 9999;
+    
+}
+.notify.email{
+ behavior: url(../PIE/PIE.htc); 
+border-top: 1px solid #F4F4F4;
+border-left: 1px solid #F4F4F4;
+border-bottom: 1px solid #D7D7D7;
+border-right: 1px solid #D7D7D7;
+color: #323232;
+background-color:  #F0F0F0;
+background-image: url('../imagenes/message.png');
+ z-index: 9999;
+    
+}
+.notify.descarga{
+ behavior: url(../PIE/PIE.htc); 
+border-top: 1px solid white;
+border-bottom: 1px solid #EEE;
+border-left:  1px solid white;
+border-right:  1px solid #EEE;
+color: #037CDA;
+background-color:  #F7F7F7;
+
+/*background: -moz-linear-gradient(top,#F7F7F7,#F0F0F0);
+background: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(#F0F0F0));*/
+background-image: url('../imagenes/download.png');
+z-index: 9999;
+}
+.notify.tip{
+ behavior: url(../PIE/PIE.htc); 
+    border-top: 1px solid #FBE4AE;
+    border-left: 1px solid #FBE4AE;
+    border-right:1px solid #D9A87D;
+border-bottom: 1px solid #D9A87D;
+
+color:#B26B17;
+background-color:  #F9D9A1;
+background-image: url('../imagenes/tips.png');
+ z-index: 9999; 
+    
+}
+.notify.secure {
+ behavior: url(../PIE/PIE.htc); 
+border-top: 1px solid #EFE0FE;
+border-left: 1px solid #EFE0FE;
+border-bottom: 1px solid #D3BEE9;
+border-right: 1px solid #D3BEE9;
+background-color:  #E5CEFE;
+color: #6417B2;
+background-image: url('../imagenes/secure.png');
+z-index: 9999;
+}
+.tables tbody{
+    
+    color:#fffff0
+}
+
+
+

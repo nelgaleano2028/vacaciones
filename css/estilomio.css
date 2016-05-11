@@ -1,0 +1,17 @@
+#principal{ 
+	width:950px;
+	margin:  0px auto;
+}
+
+#titulo{
+	width:80%;
+	margin:  0px auto;
+	text-align:center;
+	line-height: 15px;
+}
+
+#aparecer{ display: none;}
+
+#centrado{ text-align:center;}
+
+p{ font-weight:bold;}

@@ -1,0 +1,70 @@
+/** Oracle crear tabla de cap_endeudamiento**/
+CREATE TABLE CAP_ENDEUDAMIENTO cap_endeudamiento
+(
+  COD_EPL      VARCHAR2(12 BYTE)                NOT NULL,
+  MES         NUMBER(4),
+  ANO         NUMBER(4),
+  VALOREND    NUMBER(10),
+  CNSCTVO     NUMBER(15),
+  FEC_SOLICITUD  DATE                           NOT NULL
+)
+
+
+ANO MES COD_EPL FECHASOLICITUD VALOR
+
+I4 NADA
+
+
+include_once('../lib/configdbf.php');
+include_once('../lib/configdbc.php');
+include_once('../lib/configdb.php');
+include_once('../lib/configdbt.php');
+
+$nomadmin = $_SESSION['nom'];
+
+//validacion bd f
+$consultaf = "SELECT NOM_ADMIN AS NOM_ADMIN, CONTRASENA AS CONTRASENA,PRIVILEGIO AS PRIVILEGIO,COD_EPL AS COD_EPL FROM T_ADMIN 
+
+WHERE NOM_ADMIN = '".$nomadmin."'";
+$rs = $configf->Execute($consultaf);
+$rowf = $rs->fetchrow();
+
+//validacion bd c
+$consultac = "SELECT NOM_ADMIN AS NOM_ADMIN, CONTRASENA AS CONTRASENA,PRIVILEGIO AS PRIVILEGIO,COD_EPL AS COD_EPL FROM T_ADMIN 
+
+WHERE NOM_ADMIN = '".$nomadmin."'";
+$rs = $configc->Execute($consultac);
+$rowc = $rs->fetchrow();
+
+//validacion bd 
+$consulta = "SELECT NOM_ADMIN AS NOM_ADMIN, CONTRASENA AS CONTRASENA,PRIVILEGIO AS PRIVILEGIO,COD_EPL AS COD_EPL FROM T_ADMIN 
+
+WHERE NOM_ADMIN = '".$nomadmin."'";
+$rs = $config->Execute($consulta);
+$rowa = $rs->fetchrow();
+
+//validacion bd t
+$consultat = "SELECT NOM_ADMIN AS NOM_ADMIN, CONTRASENA AS CONTRASENA,PRIVILEGIO AS PRIVILEGIO,COD_EPL AS COD_EPL FROM T_ADMIN 
+
+WHERE NOM_ADMIN = '".$nomadmin."'";
+$rs = $configt->Execute($consultat);
+$rowt = $rs->fetchrow();
+
+if(isset($rowf['NOM_ADMIN'])){
+$conn = $configf;
+}
+if(isset($rowc['NOM_ADMIN'])){
+$conn = $configc;
+}
+if(isset($rowa['NOM_ADMIN'])){
+$conn = $config;
+}
+if(isset($rowt['NOM_ADMIN'])){
+$conn = $configt;
+}
+
+if(!isset($_SESSION['privi'])){
+  
+  header("location: index.php");
+
+}

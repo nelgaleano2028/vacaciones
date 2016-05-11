@@ -1,0 +1,34 @@
+
+   #testTable { 
+           
+            margin-left: auto;
+            /**margin-left: 35%;*/
+            margin-right: auto;
+            
+ 
+          }
+          
+          #tablePagination { 
+            background-color: #DCDCDC; 
+            font: 12px Arial, Helvetica, sans-serif;
+            padding: 0px 5px;
+            padding-top: 2px;
+            height: 25px
+          }
+          
+          #tablePagination_paginater { 
+            margin-left: auto; 
+            margin-right: auto;
+          }
+          
+          #tablePagination img { 
+            padding: 0px 2px; 
+          }
+          
+          #tablePagination_perPage { 
+            float: left; 
+          }
+          
+          #tablePagination_paginater { 
+            float: right; 
+          }

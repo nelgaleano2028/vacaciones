@@ -1,0 +1,53 @@
+﻿body
+{
+	background-color: #CCCCCC;
+	padding-top: 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.wrapper
+{
+	width: 840px;
+	height: 300px;
+	margin: auto;
+	background-color: #fff;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+.logo
+{
+	height: 40px;
+	padding: 30px 30px 0px 30px;
+}
+.error
+{
+	color: Red;
+	display: block;
+	margin-left:132px;
+}
+.submit-button
+{
+	width: 64px;
+	height: 25px;
+	display: block;
+	margin-left: 312px;
+}
+a.submit-button
+{
+	text-decoration: none;
+	color: #CCCCCC;
+	font-size: 18px;
+}
+.locked
+{
+	background-image: url(../imagenes/locked.jpg);
+	background-position: right;
+	background-repeat: no-repeat;
+}
+.unlocked
+{
+	background-image: url(../imagenes/unlocked.jpg);
+	background-position: right;
+	background-repeat: no-repeat;
+}

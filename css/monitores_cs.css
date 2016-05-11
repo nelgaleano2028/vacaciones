@@ -1,0 +1,40 @@
+body{
+font-family: arial,sans-serif;
+font-size: 14px;
+}
+form#pago fieldset {
+order-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+}
+form#pago {
+margin:auto;
+margin-top:40px;
+width: 340px;
+
+}
+#pago h2{
+line-height: 17px;
+color: 
+#222;
+font-weight: normal;
+line-height: 24px;
+display: inline;
+font: 20px/24px Arial;
+padding: 0 .5em 0 0;
+}
+
+#capa{
+margin-top:8px;
+margin-left:5px;
+margin-bottom:26px;
+}
+.tam_str{
+	
+	font-size:14px;
+	}
+	#capa_cer{
+		margin-top:10px;
+		margin-bottom:20px;
+		margin-left:10px;
+		}

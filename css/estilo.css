@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+/*body {
+	background: #fff url(graphics/bg-body.gif) repeat-x;
+	font:12px Arial, Helvetica, sans-serif;
+	}*/
+h2 {
+	color:#678197;
+	font-weight:bold;
+	font:Arial, Helvetica, sans-serif;
+}
+p {
+	text-align:center;
+	}	
+a:link {
+	color:#d42945;
+	text-decoration:none;
+
+	}	
+a:visited {
+	color:#d42945;
+	border-bottom:none;
+	text-decoration:none;
+	}		
+a:hover,
+a:focus {
+	
+	text-decoration: none;
+    cursor: pointer;
+	
+	
+	}
+table a,
+table a:link,
+table a:visited {
+	border:none;
+	}							
+	
+img {
+	border:0;
+	margin-top:.5em;
+	}	
+table {
+	
+	border-top:1px solid #e5eff8;
+	border-right:1px solid #e5eff8;
+	margin:1em auto;
+		
+	}
+caption {
+	color: #9ba9b4;
+	font-size:.94em;
+		letter-spacing:.1em;
+		margin:1em 0 0 0;
+		padding:0;
+		caption-side:top;
+		text-align:center;
+	}	
+tr.odd td	{
+	background:#f7fbff
+	}
+tr.odd .column1	{
+	background:#f4f9fe;
+	}	
+.column1	{
+	background:#f9fcfe;
+	}
+td {
+	color:#678197;
+	border-bottom:1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.em 1em;
+	text-align:center;
+	font:12px Arial, Helvetica, sans-serif;
+	}				
+th {
+	font-weight:normal;
+	/*color: #678197;*/
+	color: blue;
+	text-align:left;
+	border-bottom: 1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.3em 1em;
+	
+	}							
+thead th {
+	background:#f4f9fe;
+	text-align:center;
+	font:12px Arial, Helvetica, sans-serif;
+	color:#66a3d3
+	}	
+tfoot th {
+	text-align:center;
+	background:#f4f9fe;
+	}	
+tfoot th strong {
+	font:bold 1.2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+	margin:.5em .5em .5em 0;
+	color:#66a3d3;
+		}		
+tfoot th em {
+	color:#f03b58;
+	font-weight: bold;
+	font-size: 1.1em;
+	font-style: normal;
+	}
+	
+
+.capa{
+	behavior: url(../PIE/PIE.htc);
+width: 90%;
+-moz-box-shadow: 2px 2px 8px #666;
+
+-webkit-box-shadow: 10px 10px 8px #666;
+box-shadow: 2px 2px 8px #666;
+
+ /*behavior: url(../PIE/ie-css3.htc);*/
+/* box-shadow: none | <shadow> [,<shadow>]*
+    where <shadow> = inset? && [ <10px> <5px> <10px>? <spread-radius>? && <#666>? ]*/
+}
+
