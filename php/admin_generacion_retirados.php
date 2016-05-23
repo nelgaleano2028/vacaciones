@@ -96,7 +96,7 @@ function cartalaboral($flag, $empresa_real, $nit_real){
 global $conn;
 
 
-if($_POST["cedula"]==null){
+if($_POST["cedula2"]==null){
 ?> <script> alert("Ingresa una Cedula");
 					close();</script> <?php 
 
@@ -108,9 +108,9 @@ if($_POST["destino"]==null){
 
 }
 
-if($_POST["cedula"]){
+if($_POST["cedula2"]){
 
-	$sql="select COD_EPL  from empleados_basic where cedula='".$_POST["cedula"]."' and estado='I' ORDER BY INI_CTO DESC";
+	$sql="select COD_EPL  from empleados_basic where cedula='".$_POST["cedula2"]."' and estado='I' ORDER BY INI_CTO DESC";
 		
 	$res=$conn->Execute($sql);
 
@@ -128,7 +128,7 @@ if($_POST["cedula"]){
 				
 }
 
-$codigo=$_POST["cedula"];
+$codigo=$_POST["cedula2"];
 
 if($flag=="profunda"){
 

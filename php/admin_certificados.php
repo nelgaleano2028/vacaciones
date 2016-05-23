@@ -64,30 +64,37 @@ else cuentacampo.value = limite - campo.value.length;
 }
 </script>
 
+
+
 <script type="text/javascript">// MENSAJE PARA PERSONAL CON MAS DE UN REINTEGRO.
-
-function pregunta() {
+function preguntaR() {
+var cedula2 = $("#cedula2").val();
+	$.ajax({
+		url: "admin_generacion_retirados_copia.php",
+		type : "POST",
+		cache:false,
+		data : "cedula2="+cedula2,
+		success: function(data){
+			if(data=="1"){
+				alert("Tenga en cuenta que esta persona tiene mas de un registro en la BD como empleado retirado");
+			}
+		}				  
+	});
+}
+function pregunta() {	// MENSAJE PARA PERSONAL CON MAS DE UN REINTEGRO.
 var cedula = $("#cedula").val();
-
 	$.ajax({
 		url: "admin_generacion_copia.php",
 		type : "POST",
 		cache:false,
 		data : "cedula="+cedula,
 		success: function(data){
-			if(data=="1"){
+			if(data=='1'){
 				alert("Tenga en cuenta que esta persona tiene mas de un registro en la BD como empleado retirado");
-			}else
-			if(data=="2"){
-				alert("Tenga en cuenta que esta persona tiene mas de un registro en la BD como empleado retirado");	
-			}		
+			}	
 		}				  
 	});
 }
-
-
-
- 
 </script>
 
 <head>
@@ -116,17 +123,17 @@ var cedula = $("#cedula").val();
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 <![endif]-->
 	
-	      <script type="text/javascript">
+<script type="text/javascript">
             
 			
-			$(function() {
+$(function() {
     if (window.PIE) {
         $('.rounded').each(function() {
             PIE.attach(this);
         });
     }
 });
-	      </script>
+</script>
 </head>
 
 <body>
@@ -152,7 +159,7 @@ if(isset($flag)){
 <br />
 <br />
 
-<span style="font-weight:bold">Ingrese la Cedula: <input type="text" id="cedula" name="cedula" /></span><br /><br />
+<span style="font-weight:bold">Ingrese la Cedula o Código: <input type="text" id="cedula" name="cedula" /></span><br /><br />
 
 <input type="radio" value="opcion3" name="certificado"/>Certificado normal con salario con firma
 <br /><br />
@@ -195,7 +202,7 @@ if(isset($flag)){
 <br />
 <br />
 
-<span style="font-weight:bold">Ingrese la Cedula: <input type="text" id="cedula" name="cedula" /></span><br /><br />
+<span style="font-weight:bold">Ingrese la Cedula o Código: <input type="text" id="cedula2" name="cedula2" /></span><br /><br />
 
 <input type="radio" value="opcion3" name="certificado"/>Certificado normal con salario con firma
 <br /><br />
@@ -210,7 +217,7 @@ if(isset($flag)){
                   <input readonly maxlength="3" size="3" name="remLen" value="50" type="text" /> caracteres</p>
 <br /><br />
 <center>
-<INPUT id="boton" class="boton" TYPE="submit" NAME="ok" onclick="pregunta()" VALUE="Generar">
+<INPUT id="boton" class="boton" TYPE="submit" NAME="ok" onclick="preguntaR()" VALUE="Generar">
 </center>
 </fieldset>
 </form>
@@ -223,7 +230,7 @@ if(isset($flag)){
 <br />
 <br />
 
-<span style="font-weight:bold">Ingrese la Cedula: <input type="text" id="cedula" name="cedula" /></span><br /><br />
+<span style="font-weight:bold">Ingrese la Cedula o Código: <input type="text" id="cedula" name="cedula" /></span><br /><br />
 
 <input type="radio" value="opcion3" name="certificado"/>Certificado normal con salario con firma
 <br /><br />
@@ -266,7 +273,7 @@ if(isset($flag)){
 <br />
 <br />
 
-<span style="font-weight:bold">Ingrese la Cedula: <input type="text" id="cedula" name="cedula" /></span><br /><br />
+<span style="font-weight:bold">Ingrese la Cedula o Código: <input type="text" id="cedula2" name="cedula2" /></span><br /><br />
 
 <input type="radio" value="opcion3" name="certificado"/>Certificado normal con salario con firma
 <br /><br />
@@ -281,7 +288,7 @@ if(isset($flag)){
                   <input readonly maxlength="3" size="3" name="remLen" value="50" type="text" /> caracteres</p>
 <br /><br />
 <center>
-<INPUT id="boton" class="boton" TYPE="submit" NAME="ok" onclick="pregunta()" VALUE="Generar">
+<INPUT id="boton" class="boton" TYPE="submit" NAME="ok" onclick="preguntaR()" VALUE="Generar">
 </center>
 </fieldset>
 </form>

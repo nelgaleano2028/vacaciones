@@ -1,4 +1,5 @@
 ﻿<?php
+@session_start();
 
 /*
 Contactenos V4 - 26/06/2011 
@@ -19,13 +20,13 @@ archivos. Esta carpeta debe tener chmod 777.
 */
 //CONFIGURACION 
 
-$direccion_envio= 'novedades.nominacolombia@telefonica.com'; 								
+$direccion_envio= 'nags_dcm2028@hotmail.com'; 								
 //la direccion a la que se enviara el email.
 
 $url= 'http://www.talentsw.com/contactenos'; 	
 //la URL donde esta publicado el formulario. SIN la barra al final
 
-$cantidad_archivos= 10; 														
+$cantidad_archivos= 10;
 //la cantidad máxima de archivos que se permitirá enviar.
 
 //FIN CONFIGURACION
@@ -38,9 +39,10 @@ $cantidad_archivos= 10;
 if (isset ($_POST['enviar'])) {
 
 // vamos a hacer uso de la clase phpmailer, 
-require("inc/class.phpmailer.php");
-require("inc/class.smtp.php");
-
+// require("inc/class.phpmailer.php");
+// require("inc/class.smtp.php");
+require_once('../php/class_correoprogramado1.php');
+require_once('../php/class_mailer.php');
 
 $mail = new PHPMailer();
 
@@ -60,7 +62,7 @@ $mail->Password = 'tytcali2013';
 //$mail->Password = 'Dg?*&{=+vOp^';
 
 //recogemos las variables y configuramos PHPMailer
-$mail->From     = 'novedades.nominacolombia@telefonica.com';
+$mail->From     = 'nelgaleano.2028@gmail.com';
 $mail->FromName = 'Jefatura de Nomina Centro de Servicios Compartidos';
 $mail->AddAddress($direccion_envio); 
 $mail->Subject = "Novedades autogestion nomina";
@@ -135,10 +137,22 @@ $mensaje='<div id="error">- Los Campos Marcados Con * Son Requeridos. '.$error_a
 		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 		<script src="js/jquery.form.js" type="text/javascript" language="javascript"></script>
 		<script src="js/jquery.MultiFile.pack.js" type="text/javascript" language="javascript"></script>
-
+		
+<script language="JavaScript"> 
+var statSend = false;
+function validar() {
+    if (!statSend) {  // Funcion para evitar que se presione click varias veces luego de enviar los archivos.
+        statSend = true;
+        return true;
+    } else {
+        alert("Espere por favor....");
+        return false;
+    }
+}
+</script> 
 	</head>
 	<body>
-	<div id="form">
+	<div name="form" id="form" >
 		
 <h2>REPORTE DE NOVEDADES EMPLEADOS TELEFONICA</h2>
 <p>Si tienes alguna novedad por reportar, por favor tener en cuenta lo siguiente:</p>
@@ -165,7 +179,7 @@ $mensaje='<div id="error">- Los Campos Marcados Con * Son Requeridos. '.$error_a
 <?php if($cantidad_archivos > 1) {$plural='s';} else {$plural='';} ?>
 
 <?php if ($flag!='ok') { ?>
-<form action="<?php echo $PHP_SELF;?>" method="post" enctype="multipart/form-data">
+<form name="formulario" action="<?php echo $PHP_SELF;?>" method="post" onSubmit="return validar();" enctype="multipart/form-data">
 	<p><strong>Escribe tu nombre*</strong> (este campo es obligatorio)<br />
 	<input name="nombre" type="text"  size="40" <?php if (isset ($flag) && $_POST['nombre']=='') { echo 'class="error"';} else {echo 'class="campo"';} ?> /></p>
 	
@@ -179,7 +193,7 @@ $mensaje='<div id="error">- Los Campos Marcados Con * Son Requeridos. '.$error_a
 		
 	<p><strong>Comentario*</strong> (este campo es obligatorio)<br />
 	<textarea cols="60"  rows="10"<?php if (isset ($flag) && $_POST['comentario']=='') { echo 'class="com-error"';} else {echo 'class="com"';} ?> name="comentario"><?php echo $_POST['comentario'];?></textarea></p>
-	<p><input class="boton" type="submit" name="enviar" value="enviar" /></p>
+	<p><input  class="boton" id="boton" type="submit" name="enviar" value="enviar" /></p>
 	<p>Verifique por favor su email antes de dar click en enviar.</p>
 	</form>
 <?php } ?>
