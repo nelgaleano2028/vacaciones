@@ -2,6 +2,7 @@
 @session_start();
 
 //--------------------------------------------- BASE DE DATOS 2 ----------------------------------------
+
 include_once('../lib/configdbf.php');
 
 $configf;
@@ -131,8 +132,8 @@ $rh = $conn->Execute($qry1);
 
 	@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
 	
-	//$email = 'nags_dcm2028@hotmail.com';
-	$email = $row["EMAIL_JEFE"];
+	$email = 'nags_dcm2028@hotmail.com';
+	//$email = $row["EMAIL_JEFE"];
 	
 	$mail= new mailer();
 	
@@ -140,7 +141,7 @@ $rh = $conn->Execute($qry1);
          //Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
          $mail->AddAddress($email); // Esta es la dirección a donde enviamos $email(jefe o en tal caso nomina)
          $mail->IsHTML(true); // El correo se envía como HTML
-         $mail->Subject = "Vacaciones pendientes por disfrutar de tu personal a cargo"; // Este es el titulo del email.
+         $mail->Subject = $codigojefe1; // Este es el titulo del email.
            //-----FIN EMAIL-----
 		   
 		 $mail->Body = $content1; // Mensaje a enviar
@@ -257,8 +258,8 @@ $rh = $conn->Execute($qry1);
 
 	@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
 	
-	// $email = 'nags_dcm2028@hotmail.com';
-	$email = $row["EMAIL_JEFE"];
+	$email = 'nags_dcm2028@hotmail.com';
+	//$email = $row["EMAIL_JEFE"];
 	
 	$mail= new mailer();
 	
@@ -266,7 +267,7 @@ $rh = $conn->Execute($qry1);
          //Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
          $mail->AddAddress($email); // Esta es la dirección a donde enviamos $email(jefe o en tal caso nomina)
          $mail->IsHTML(true); // El correo se envía como HTML
-         $mail->Subject = "Vacaciones pendientes por disfrutar de tu personal a cargo"; // Este es el titulo del email.
+         $mail->Subject = $codigojefe1; // Este es el titulo del email.
            //-----FIN EMAIL-----
 		   
 		 $mail->Body = $content1; // Mensaje a enviar
@@ -382,8 +383,8 @@ while($row2 = $rh2->FetchRow()){
 
 	@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
 	
-	// $email = 'nags_dcm2028@hotmail.com';
-	$email = $row["EMAIL_JEFE"];
+	$email = 'nags_dcm2028@hotmail.com';
+	//$email = $row["EMAIL_JEFE"];
 	
 	$mail= new mailer();
 	
@@ -391,7 +392,7 @@ while($row2 = $rh2->FetchRow()){
          //Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
          $mail->AddAddress($email); // Esta es la dirección a donde enviamos $email(jefe o en tal caso nomina)
          $mail->IsHTML(true); // El correo se envía como HTML
-         $mail->Subject = "Vacaciones pendientes por disfrutar de tu personal a cargo"; // Este es el titulo del email.
+         $mail->Subject = $codigojefe1; // Este es el titulo del email.
            //-----FIN EMAIL-----
 		   
 		 $mail->Body = $content1; // Mensaje a enviar
@@ -507,8 +508,8 @@ $rh = $conn->Execute($qry1);
 
 	@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
 	
-	// $email = 'nelgaleano.2028@gmail.com';
-	$email = $row["EMAIL_JEFE"];
+	$email = 'nelgaleano.2028@gmail.com';
+	//$email = $row["EMAIL_JEFE"];
 	
 	$mail= new mailer();
 	

@@ -89,7 +89,15 @@ alert('Verifica de nuevo tus datos');
 }  
 }
 }
+// $(function() {
+    // $("#from").datepicker();
+    // $('#from').datepicker('option', {dateFormat: 'dd/mm/yy'});
+// });
 	$(function() {
+		$("#from").datepicker();
+		$('#from').datepicker('option', {dateFormat: 'dd/mm/yy'});
+		$("#to").datepicker();
+		$('#to').datepicker('option', {dateFormat: 'dd/mm/yy'});
 		var dates = $( "#from, #to" ).datepicker({
 			defaultDate: "+1w",
 			changeMonth: true,

@@ -64,7 +64,7 @@ $from = $_POST["from"];
 $to = $_POST["to"];
 
 	$query = "select CEDULA AS CEDULA, NOMBRES||' '||APELLIDOS AS NOMBRES, FECHA_REG AS FECHA_REG, NOVEDAD AS NOVEDAD, COMENTARIO AS COMENTARIO, EMPRESA AS EMPRESA 
-from t_admail where FECHA_REG between to_date('".$from."','MM-DD-YY')  and to_date('".$to."','MM-DD-YY')";
+from t_admail where FECHA_REG between to_date('".$from."','DD-MM-YY')  and to_date('".$to."','DD-MM-YY')";
 $res = $conn->Execute($query); 
 
 	echo '<table width="50%" border="1" cellpadding="10" cellspacing="0" bordercolor="#666666" id="Exportar_a_Excel" style="border-collapse:collapse;">

@@ -236,9 +236,9 @@ function soloLetras(e) {
 	#otrasnovedades{
 	border: 8px solid #ccc;
 	width: 98%;
-	height: 94px;
+	height: 102px;
 	overflow: hidden;
-	font-size: 1.4em;
+	font-size: 1.3em;
 	color: #666;
 	}
 	#otrasnovedades ul{
@@ -250,10 +250,10 @@ function soloLetras(e) {
 	}
 	#otrasnovedades li{
 		margin: 0;
-		padding: 10px;
+		padding: 6px;
 		height: 90px;
 		overflow: hidden;
-		line-height: 14px;
+		line-height: 10px;
 	}
 	#otrasnovedades li a{
 		font-weight: bold;

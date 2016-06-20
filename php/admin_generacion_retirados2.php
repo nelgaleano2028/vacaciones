@@ -120,7 +120,7 @@ function cartalaboral($flag, $empresa_real, $nit_real){
 global $conn;
 
 
-if($_POST["cedula"]==null){
+if($_POST["cedula2"]==null){
 ?> <script> alert("Ingresa una Cedula");
 					close();</script> <?php 
 
@@ -132,9 +132,9 @@ if($_POST["destino"]==null){
 
 }
 
-if($_POST["cedula"]){
+if($_POST["cedula2"]){
 
-	$sql="select COD_EPL  from empleados_basic where cedula='".$_POST["cedula"]."' and estado='I' ORDER BY INI_CTO DESC";
+	$sql="select COD_EPL  from empleados_basic where cedula='".$_POST["cedula2"]."' and estado='I' ORDER BY INI_CTO DESC";
 		
 	$res=$conn->Execute($sql);
 
@@ -152,7 +152,7 @@ if($_POST["cedula"]){
 				
 }
 
-$codigo=$_POST["cedula"];
+$codigo=$_POST["cedula2"];
 
 if($flag=="profunda"){
 
@@ -691,7 +691,7 @@ if(@$_POST["certificado"]=="opcion4"){
                         <td colspan="2"><br></td>
                     </tr>
                      <tr>
-                         <td colspan="2" ><p CLASS="justifyText">El suscrito Gerente de Servicios Compartidos certifica que '.$cadena.' identificado(a) con '.$cadena10.' No '.$cedula.', suscribi&oacute; contrato laboral de '.$cadena8.', con la empresa COLOMBIA TELECOMUNICACIONES S.A. E.S.P NIT. 830.122.566-1 a partir del '.$fecha.' hasta el '.$f_cesion.', fecha en la cual se cedi&oacute; el contrato de trabajo del colaborador a la empresa TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT. NIT 900773345-7. En este mismo sentido se deja consta que el  '.$f_cesion.' se termino la relacion laboral vigente con TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT, siendo el ultimo cargo desempe&ntilde;ado por el colaborador el de '.$cargo.' con '.$cadena7.' de '.$letrasnum.' ($<span>'.number_format($sueldo, 0, ",", ".").'</span>) '.$cadena6.' </p></td>
+                         <td colspan="2" ><p CLASS="justifyText">El suscrito Gerente de Servicios Compartidos certifica que '.$cadena.' identificado(a) con '.$cadena10.' No '.$cedula.', suscribi&oacute; contrato laboral de '.$cadena8.', con la empresa COLOMBIA TELECOMUNICACIONES S.A. E.S.P NIT. 830.122.566-1 a partir del '.$fecha.' hasta el '.$f_cesion.', fecha en la cual se cedi&oacute; el contrato de trabajo del colaborador a la empresa TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT. NIT 900773345-7. En este mismo sentido se deja constancia que el  '.$fecha_retiro.' se termino la relacion laboral vigente con TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT, siendo el ultimo cargo desempe&ntilde;ado por el colaborador el de '.$cargo.' con '.$cadena7.' de '.$letrasnum.' ($<span>'.number_format($sueldo, 0, ",", ".").'</span>) '.$cadena6.' </p></td>
                     </tr>';
 					
 					if($cadena11!=NULL){
@@ -868,7 +868,7 @@ else{   if(@$_POST["certificado"]=="opcion2"){
                         <td colspan="2"><br></td>
                     </tr>
                     <tr>
-                         <td colspan="2" ><p CLASS="justifyText">El suscrito Gerente de Servicios Compartidos certifica que '.$cadena.' identificado(a) con '.$cadena10.' No '.$cedula.', suscribi&oacute; contrato laboral de '.$cadena8.', con la empresa COLOMBIA TELECOMUNICACIONES S.A. E.S.P NIT. 830.122.566-1 a partir del '.$fecha.' hasta el '.$f_cesion.', fecha en la cual se cedi&oacute; el contrato de trabajo del colaborador a la empresa TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT. NIT 900773345-7. En este mismo sentido se deja consta que el  '.$f_cesion.' se termino la relacion laboral vigente con TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT, siendo el ultimo cargo desempe&ntilde;ado por el colaborador el de '.$cargo.'.</p></td></tr>'; 
+                         <td colspan="2" ><p CLASS="justifyText">El suscrito Gerente de Servicios Compartidos certifica que '.$cadena.' identificado(a) con '.$cadena10.' No '.$cedula.', suscribi&oacute; contrato laboral de '.$cadena8.', con la empresa COLOMBIA TELECOMUNICACIONES S.A. E.S.P NIT. 830.122.566-1 a partir del '.$fecha.' hasta el '.$f_cesion.', fecha en la cual se cedi&oacute; el contrato de trabajo del colaborador a la empresa TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT. NIT 900773345-7. En este mismo sentido se deja constancia que el  '.$fecha_retiro.' se termino la relacion laboral vigente con TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT, siendo el ultimo cargo desempe&ntilde;ado por el colaborador el de '.$cargo.'.</p></td></tr>'; 
 					
 			                                
                   $content .= '<tr>
@@ -1031,7 +1031,7 @@ else{  if(@$_POST["certificado"]=="opcion1"){
                         <td colspan="2"><br></td>
                     </tr>
                     <tr>
-                         <td colspan="2" ><p CLASS="justifyText">El suscrito Gerente de Servicios Compartidos certifica que '.$cadena.' identificado(a) con '.$cadena10.' No '.$cedula.', suscribi&oacute; contrato laboral de '.$cadena8.', con la empresa COLOMBIA TELECOMUNICACIONES S.A. E.S.P NIT. 830.122.566-1 a partir del '.$fecha.' hasta el '.$f_cesion.', fecha en la cual se cedi&oacute; el contrato de trabajo del colaborador a la empresa TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT. NIT 900773345-7. En este mismo sentido se deja consta que el  '.$f_cesion.' se termino la relacion laboral vigente con TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT, siendo el ultimo cargo desempe&ntilde;ado por el colaborador el de '.$cargo.'. </p></td>
+                         <td colspan="2" ><p CLASS="justifyText">El suscrito Gerente de Servicios Compartidos certifica que '.$cadena.' identificado(a) con '.$cadena10.' No '.$cedula.', suscribi&oacute; contrato laboral de '.$cadena8.', con la empresa COLOMBIA TELECOMUNICACIONES S.A. E.S.P NIT. 830.122.566-1 a partir del '.$fecha.' hasta el '.$f_cesion.', fecha en la cual se cedi&oacute; el contrato de trabajo del colaborador a la empresa TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT. NIT 900773345-7. En este mismo sentido se deja constancia que el  '.$fecha_retiro.' se termino la relacion laboral vigente con TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT, siendo el ultimo cargo desempe&ntilde;ado por el colaborador el de '.$cargo.'. </p></td>
                     </tr>
                     <tr>
                         <td colspan="2"><br></td>
@@ -1182,7 +1182,7 @@ else{ if(@$_POST["certificado"]=="opcion3"){
                         <td colspan="2"><br></td>
                     </tr>
                     <tr>
-                         <td colspan="2" ><p CLASS="justifyText">El suscrito Gerente de Servicios Compartidos certifica que '.$cadena.' identificado(a) con '.$cadena10.' No '.$cedula.', suscribi&oacute; contrato laboral de '.$cadena8.', con la empresa COLOMBIA TELECOMUNICACIONES S.A. E.S.P NIT. 830.122.566-1 a partir del '.$fecha.' hasta el '.$f_cesion.', fecha en la cual se cedi&oacute; el contrato de trabajo del colaborador a la empresa TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT. NIT 900773345-7. En este mismo sentido se deja consta que el  '.$f_cesion.' se termino la relacion laboral vigente con TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT, siendo el ultimo cargo desempe&ntilde;ado por el colaborador el de '.$cargo.' con '.$cadena7.' de '.$letrasnum.' ($<span>'.number_format($sueldo, 0, ",", ".").'</span>) '.$cadena6.' </p></td>
+                         <td colspan="2" ><p CLASS="justifyText">El suscrito Gerente de Servicios Compartidos certifica que '.$cadena.' identificado(a) con '.$cadena10.' No '.$cedula.', suscribi&oacute; contrato laboral de '.$cadena8.', con la empresa COLOMBIA TELECOMUNICACIONES S.A. E.S.P NIT. 830.122.566-1 a partir del '.$fecha.' hasta el '.$f_cesion.', fecha en la cual se cedi&oacute; el contrato de trabajo del colaborador a la empresa TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT. NIT 900773345-7. En este mismo sentido se deja constancia que el  '.$fecha_retiro.' se termino la relacion laboral vigente con TELEFONICA GLOBAL TECHNOLOGY SUCURSAL COLOMBIA - TGT, siendo el ultimo cargo desempe&ntilde;ado por el colaborador el de '.$cargo.' con '.$cadena7.' de '.$letrasnum.' ($<span>'.number_format($sueldo, 0, ",", ".").'</span>) '.$cadena6.' </p></td>
                     </tr>';
 					
 					if($cadena11!=NULL){

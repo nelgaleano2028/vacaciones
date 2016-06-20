@@ -51,13 +51,13 @@ $conn = $configt;
 
 global $conn;	
 	
-		$sql="Select COD_EPL, ESTADO from empleados_basic where cedula='".$_POST["cedula"]."' and cod_epl like '%R%' and INI_CTO=(select max(INI_CTO) 
-			from empleados_basic where cedula='".$_POST["cedula"]."')";		
+		$sql="Select COD_EPL from empleados_basic where cedula='".$_POST["cedula2"]."' and cod_epl like '%R%' and INI_CTO=(select max(INI_CTO) 
+			from empleados_basic where cedula='".$_POST["cedula2"]."')";		
 		$res=$conn->Execute($sql);
 		$row23 = $res->fetchrow();	
 		$codigo=$row23["COD_EPL"];
 		
-		if($row23["ESTADO"]=='A'){		
+		if(isset($codigo)){		
 			echo '1';
 		}
 ?>

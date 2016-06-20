@@ -152,7 +152,7 @@ function aceptar_solicitud(cod_con,cod_epl,fec_ini,fec_fin,cod_cc2,dias,cod_aus,
  <br><br>
 
  <center>
-			<h2>Editar o Rechazar Solicitudes</h2>
+			<h2>Editar o Cerrar Solicitudes</h2>
  <div id="capa2" class="capa2">			
  <p style="text-align:left">Si tiene problemas para exportar la tabla verifique que tiene instalado el reproductor de adobe flash player, de lo contrario descargue <a href="http://get.adobe.com/es/flashplayer/">aqui</a>, si persiste con el inconveniente por favor abrir la pagina WEB con Google Chrome. </p>
                     <table cellpadding="0" cellspacing="0" border="0" class="display " id="admin" width="100%">
@@ -175,8 +175,8 @@ function aceptar_solicitud(cod_con,cod_epl,fec_ini,fec_fin,cod_cc2,dias,cod_aus,
 		        <th  scope="col">Direccion</th>
                 			
                  <th  scope="col">Editar</th>
-                 <th  scope="col">Rechazar</th>
-                 <th  scope="col">Comentario Rechazo</th>
+                 <th  scope="col">Cerrar</th>
+                 <th  scope="col">Comentario Cierre</th>
 				 
 			        </tr>
 			      </thead>
@@ -212,7 +212,7 @@ function aceptar_solicitud(cod_con,cod_epl,fec_ini,fec_fin,cod_cc2,dias,cod_aus,
 							</td>
                   <td><span class="dele">
 							<a href="#" onClick="rechazar_solicitud('<?php echo $lista3[$i]['CONSECUTIVO']; ?>','<?php echo $_SESSION['cod_admin']; ?>','<?php echo $lista3[$i]['codigo']; ?>');" > 
-							<img src="../imagenes/delete1.png" title="Rechazar" alt="Rechazar" /> 
+							<img src="../imagenes/delete1.png" title="Cerrar" alt="Cerrar" /> 
 							</a></span>
 							</td>
 			      <td><input id="observacion<?php echo $lista3[$i]['CONSECUTIVO']; ?>" type="text" />

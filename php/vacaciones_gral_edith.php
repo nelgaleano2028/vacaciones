@@ -229,7 +229,7 @@ function aceptar_solicitud(cod_con,cod_epl,fec_ini,fec_fin,cod_cc2,dias,cod_aus,
 					
 			      ?>
 				  <td><?php echo $lista3[$i]['consecutivo']; ?></td>
-				  <td><?php if($lista3[$i]['estado']!='P'){echo 'Pendiente';}elseif($lista3[$i]['estado']!='C'){echo 'Aprobado';} ?></td>
+				  <td><?php if($lista3[$i]['estado']=='P'){echo 'Pendiente';}elseif($lista3[$i]['estado']=='C'){echo 'Aprobado';} ?></td>
                               <td ><?php echo $lista3[$i]['codigo']; ?></td>
 			      <td ><?php echo $lista3[$i]['cedula']; ?></td>
 			      <td><?php echo utf8_decode($lista3[$i]['nombre'])." ".utf8_decode($lista3[$i]['apellido']); ?></td>
@@ -239,7 +239,7 @@ function aceptar_solicitud(cod_con,cod_epl,fec_ini,fec_fin,cod_cc2,dias,cod_aus,
                               <td><?php echo $final=date("d-m-Y",strtotime($lista3[$i]['final'])); ?></td>
 							   <td><?php echo $lista3[$i]['solicitud']; ?></td>
                               <td><?php echo $lista3[$i]['dias']; ?></td>
-							  <td><input type="checkbox" name="check_list[]" id=<?php echo $lista3[$i]['consecutivo']; ?> value='<?php echo $lista3[$i]['codigo']; ?>,<?php echo $lista3[$i]['consecutivo']; ?>,<?php echo $lista3[$i]['cod_area']; ?>,<?php echo $lista3[$i]['ausencia']; ?>,<?php echo $lista3[$i]['concepto']; ?>,<?php echo $lista3[$i]['dias']; ?>,<?php echo $inicial; ?>, <?php echo $final; ?>'<?php if($lista3[$i]['estado']!='C'){echo 'disabled';} ?> >
+							  <td><input type="checkbox" name="check_list[]" id=<?php echo $lista3[$i]['consecutivo']; ?> value='<?php echo $lista3[$i]['codigo']; ?>,<?php echo $lista3[$i]['consecutivo']; ?>,<?php echo $lista3[$i]['cod_area']; ?>,<?php echo $lista3[$i]['ausencia']; ?>,<?php echo $lista3[$i]['concepto']; ?>,<?php echo $lista3[$i]['dias']; ?>,<?php echo $inicial; ?>, <?php echo $final; ?>'<?php if($lista3[$i]['estado']!='P'){echo 'disabled';} ?> >
 				  <input type="hidden" id=<?php echo "concep".$lista3[$i]['consecutivo']; ?> value=<?php echo $lista3[$i]['concepto']; ?>>
 				  <input type="hidden" id=<?php echo "cod_area".$lista3[$i]['consecutivo']; ?> value=<?php echo $lista3[$i]['cod_area']; ?>>
 				  <input type="hidden" id=<?php echo "ausen".$lista3[$i]['consecutivo']; ?> value=<?php echo $lista3[$i]['ausencia']; ?>>

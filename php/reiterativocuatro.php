@@ -5,7 +5,7 @@
 include_once('../lib/configdbf.php');
 
 $configf;
-
+$empresaf='FUNDACION';
 //------------------------------FIN antidoto
 require_once('../php/class_correoprogramado2.php');
 require_once('../php/class_mailer.php');
@@ -86,7 +86,7 @@ $rh = $conn->Execute($qry1);
 	</td>
 	<td bgcolor='#ADD8E6' style='font-weight: bold; width:20%;'>
 	Días pendientes por disfrutar
-	</td>
+	</td>	
 	</tr>
 	</table>
 	"; 			
@@ -106,6 +106,7 @@ $rh = $conn->Execute($qry1);
 		";
 	$conn = $configf;
 	$rh2 = $conn->Execute($qry2);
+	$i=0;
 	
 	while($row2 = $rh2->FetchRow()){
 	$contenido1.="<table border='1' align='center' style='width:100%; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;
@@ -126,15 +127,32 @@ $rh = $conn->Execute($qry1);
 		</tr>
 		</table>
 		";
+		
+		$lista[] = array("CODIGO"=>@$row2["COD_EPL"]);
+		$contenido20.=$lista[$i]["CODIGO"];
+		$i++;
 	}
-	$contenido1.="</br></br> <strong>Jefatura de Nómina</strong>";
-
+	  // if(@$lista==null){
+		// echo "<tr>
+		// <td colspan='5'>No hay datos a Mostrar</tr>";
+    // }else{		
+		// $i=0;
+		// while($i<count($lista)){
+		
+			$contenido1.="<span style='color:#FFFFFF'> $contenido20 - $empresaf - $codigojefe1 <BR></span>";
+			$contenido1.="</br></br> <strong>Jefatura de Nómina</strong>";
+			// $i++;
+		// }
+	// }
+	//$lista[]=null;
 	@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
 	
 	//$email = 'nags_dcm2028@hotmail.com';
+	//$email = 'diego.gomezpinto@telefonica.com';
+	//$email = 'tyt.correoprueba@gmail.com';
 	$email = $row["EMAIL_JEFE"];
 	
-	$mail= new mailer();
+		$mail= new mailer();
 	
 		 //-----EMAIL-------
          //Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
@@ -149,14 +167,16 @@ $rh = $conn->Execute($qry1);
 		 $mail->ClearAddresses();
 
 		 $contenido1 = "";
-}
+		 $contenido20 = "";
+		 $lista = "";
+	}
 
 //--------------------------------------------- BASE DE DATOS 3 ----------------------------------------
 
 include_once('../lib/configdbc.php');
 
 $configc;
-
+$empresac='TELCONFI';
 //------------------------------FIN antidoto
 require_once('../php/class_correoprogramado2.php');
 require_once('../php/class_mailer.php');
@@ -232,7 +252,7 @@ $rh = $conn->Execute($qry1);
 	
 	$conn = $configc;
 	$rh2 = $conn->Execute($qry2);
-	
+	$i=0;
 	while($row2 = $rh2->FetchRow()){
 		$contenido1.="<table border='1' align='center' style='width:100%; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;
 		' >
@@ -249,16 +269,25 @@ $rh = $conn->Execute($qry1);
 		<td style= width:20%;>
 		".$row2["PENDIENTES"]."
 		</td>
-			</tr>
-			</table>
-			";
-		}
+		</tr>
+		</table>
+		";
+		$lista[] = array("CODIGO"=>@$row2["COD_EPL"]);
+		$contenido20.=$lista[$i]["CODIGO"];
+		$i++;
+	}
+	
+	
+	$contenido1.="<span style='color:#FFFFFF'> $contenido20 - $empresac - $codigojefe1 <BR></span>";
 	$contenido1.="</br></br> <strong>Jefatura de Nómina</strong>";
 
 	@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
 	
-	// $email = 'nags_dcm2028@hotmail.com';
+	
+	//$email = 'nelgaleano.2028@gmail.com';
+	//$email = 'diego.gomezpinto@telefonica.com';
 	$email = $row["EMAIL_JEFE"];
+	//$email = 'tyt.correoprueba@gmail.com';
 	
 	$mail= new mailer();
 	
@@ -275,6 +304,8 @@ $rh = $conn->Execute($qry1);
 		 $mail->ClearAddresses();
 
 		 $contenido1 = "";
+		 $contenido20 = "";
+		 $lista = "";
 }
 
 //--------------------------------------------- BASE DE DATOS 4 ----------------------------------------
@@ -282,7 +313,7 @@ $rh = $conn->Execute($qry1);
 include_once('../lib/configdbt.php');
 
 $configt;
-
+$empresat='TGT';
 //------------------------------FIN antidoto
 require_once('../php/class_correoprogramado2.php');
 require_once('../php/class_mailer.php');
@@ -357,7 +388,7 @@ $rh = $conn->Execute($qry1);
 	
 	$conn = $configt;
 	$rh2 = $conn->Execute($qry2);
-	
+	$i=0;
 while($row2 = $rh2->FetchRow()){
 	$contenido1.="<table border='1' align='center' style='width:100%; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;
 	' >
@@ -377,15 +408,22 @@ while($row2 = $rh2->FetchRow()){
 		</tr>
 		</table>
 		";
-	} 
-	$contenido1.="</br></br> <strong>Jefatura de Nómina</strong>";
+	$lista[] = array("CODIGO"=>@$row2["COD_EPL"]);
+		$contenido20.=$lista[$i]["CODIGO"];
+		$i++;
+	}
+	
+		$contenido1.="<span style='color:#FFFFFF'> $contenido20 - $empresat - $codigojefe1 <BR></span>";
+		$contenido1.="</br></br> <strong>Jefatura de Nómina</strong>";
 
-	@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
+		@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
 	
-	// $email = 'nags_dcm2028@hotmail.com';
-	$email = $row["EMAIL_JEFE"];
+		//$email = 'nelgaleano.2028@gmail.com';
+		//$email = 'diego.gomezpinto@telefonica.com';
+		$email = $row["EMAIL_JEFE"];
+		//$email = 'tyt.correoprueba@gmail.com';
 	
-	$mail= new mailer();
+		$mail= new mailer();
 	
 		 //-----EMAIL-------
          //Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
@@ -400,14 +438,17 @@ while($row2 = $rh2->FetchRow()){
 		 $mail->ClearAddresses();
 
 		 $contenido1 = "";
+		 $contenido20 = "";
+		 $lista = "";
+	
 }
 
-//--------------------------------------------- BASE DE DATOS 1 ----------------------------------------
+//-------------------------------------------- BASE DE DATOS 1 ----------------------------------------
 
 include_once('../lib/configdb.php');
 
 $config;
-
+$empresag='TELMOVIL';
 //------------------------------FIN antidoto
 require_once('../php/class_correoprogramado2.php');
 require_once('../php/class_mailer.php');
@@ -482,7 +523,7 @@ $rh = $conn->Execute($qry1);
 		";
 	$conn = $config;
 	$rh2 = $conn->Execute($qry2);
-	
+	$i=0;
 	while($row2 = $rh2->FetchRow()){
 	$contenido1.="<table border='1' align='center' style='width:100%; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;
 	' >
@@ -502,13 +543,20 @@ $rh = $conn->Execute($qry1);
 		</tr>
 		</table>
 		";
+	$lista[] = array("CODIGO"=>@$row2["COD_EPL"]);
+		$contenido20.=$lista[$i]["CODIGO"];
+		$i++;
 	}
-	$contenido1.="</br></br> <strong>Jefatura de Nómina</strong>";
-
-	@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
 	
-	// $email = 'nelgaleano.2028@gmail.com';
-	$email = $row["EMAIL_JEFE"];
+		$contenido1.="<span style='color:#FFFFFF'> $contenido20 - $empresag - $codigojefe1 <BR></span>";
+		$contenido1.="</br></br> <strong>Jefatura de Nómina</strong>";
+
+		@$content1=$vacaciones->mensaje_solicitud($contenido1,$titulo1);
+	
+		//$email = 'nelgaleano.2028@gmail.com';
+		//$email = 'diego.gomezpinto@telefonica.com';
+		$email = $row["EMAIL_JEFE"];
+		//$email = 'tyt.correoprueba@gmail.com';
 	
 	$mail= new mailer();
 	
@@ -525,6 +573,8 @@ $rh = $conn->Execute($qry1);
 		 $mail->ClearAddresses();
 
 		 $contenido1 = "";
+		 $contenido20 = "";
+		 $lista = "";
 }
 
 ?>
