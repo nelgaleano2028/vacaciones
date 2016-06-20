@@ -14,6 +14,8 @@
         $administrador->set_encargado($encargado);
         $administrador->set_cod_epl($cod_epl);
         $email=$administrador->email_empleado();
+		// $email = 'nags_dcm2028@hotmail.com';
+        //$email = 'dfgomezpi@gmail.com';
         
       
         
@@ -89,14 +91,14 @@ Para ver tus solicitudes ingresa <a href="https://'.@$ipvariable.'/vacaciones/ph
             echo "Error al aceptar esta solicitud.";
            }
         }elseif($_POST["accion"] == "rechazar"){/*Cuando se rechaza las vacaciones*/
-		$asuntonue = 'Incapacidades Teléfonica - '.$empleados[$i]["nombre"].' '.$empleados[$i]["apellido"].' - Rechazado por Líder';
+		$asuntonue = 'Incapacidades Teléfonica - '.$empleados[$i]["nombre"].' '.$empleados[$i]["apellido"].' - Cerrado por Líder';
                 $consecutivo=$_POST["consecutivo"];
             $administrador->set_consecutivo($consecutivo);
             $observacion=utf8_decode($_POST["obse"]);
              $administrador->set_observacion($observacion);
             $validar=$administrador->cambia_estado_cance();
             if($validar == true){/*True se insertaron los datos*/
-            echo "Ha rechazado esta solicitud.";
+            echo "Ha cerrado esta solicitud.";
             
 			$qry06="select DES_VAR as IP from parametros_nue where NOM_VAR='parametro_ip'";
 	  
@@ -107,14 +109,13 @@ Para ver tus solicitudes ingresa <a href="https://'.@$ipvariable.'/vacaciones/ph
             
             for($i=0;$i<count($empleados); $i++){
              $contenido='
-                 <span style="font-size: 14px; ">Se&ntilde;or(a) '.$empleados[$i]["nombre"].' '.$empleados[$i]["apellido"].' tu solicitud de incapacidades que tenias programadas del  '.date("d/m/Y",strtotime($empleados[$i]["inicial"])).' al '.date("d/m/Y",strtotime($empleados[$i]["final"])).', '.@$dias.' días hábiles, ha sido rechazada, ponte en contacto con tu lider para conocer el procedimiento a seguir.  Comentario de rechazo: '.$administrador->observacion_rechazo().'.</span>
+                 <span style="font-size: 14px; ">Se&ntilde;or(a) '.$empleados[$i]["nombre"].' '.$empleados[$i]["apellido"].' se registró tu incapacidad del  '.date("d/m/Y",strtotime($empleados[$i]["inicial"])).' al '.date("d/m/Y",strtotime($empleados[$i]["final"])).'. comentario del cierre: '.$administrador->observacion_rechazo().'.</span>
                  <br>
                  <p style="text-align: left; ">
-				 En telefónica vivimos la mejor experiencia para construir el mejor lugar para trabajar en Colombia.
-
-Para ver tus solicitudes ingresa <a href="https://'.@$ipvariable.'/vacaciones/php/main.php?valor=1">aquí</a>.
-                 <br>
-                 <span style="font-size:14px;"> <br><br>Este mensaje es informativo por favor no dar respuesta a esta cuenta de correo. Si tienes alguna duda u observacion crea tu llamada a la Mesa Centro de Servicios Compartidos haciendo <a href="http://intranet/MesasAyuda/Control.aspx?idSer=SERVICIOS DE NOMINA&idSSer=VACACIONES&pt=NOVEDADES VACACIONES&id=2" style="color: #770003">clic aquí</a>.<br><br><strong> Ten en cuenta de habilitar en el mensaje de advertencia que te aparece en la parte superior del mail, “agregar el dominio @telefonica.com en la lista de remitentes seguros” para que puedas ver la imagen. </strong><br>&nbsp;<br></span></p>
+				 Colombia Telecomunicaciones reconoce inicialmente el 100% del valor de la incapacidad, es compromiso de todos recuperar los valores a cargo de la EPS.
+				
+				 <br>
+                 <span style="font-size:14px;"> <br><br>Te invitamos a conocer la política de ausentismo de la compañía, haciendo <a href="http://intranettelefonica/org/rrhhco/syso/Documents/POLITICA%20DE%20AUSENTISMO%202014%20(2)%20(2).pdf" style="color: #770003">clic aquí</a>.<br><br><strong>Jefatura de Nomina. </strong><br><strong>Servicios Económicos. </strong>&nbsp;</span></p>
                  <p style="text-align: left; ">
                  <br>
 				 
@@ -123,7 +124,6 @@ Para ver tus solicitudes ingresa <a href="https://'.@$ipvariable.'/vacaciones/ph
                  </p>
                  <p>&nbsp;
                  </p>';
-				 
 				 ///SE INSERTA EL CONTROL DE ENVIO DE CORREOS
 	   $sqlmail = "INSERT INTO t_admail (CEDULA, NOMBRES, APELLIDOS, FECHA_REG, NOVEDAD, COMENTARIO, EMPRESA) VALUES ('".$empleados[$i]["cedula"]."','".$empleados[$i]["nombre"]."','".$empleados[$i]["apellido"]."',SYSDATE,'Incapacidades','".$email."','".$empresamail."')";
 $conn->Execute($sqlmail);
@@ -132,7 +132,7 @@ $conn->Execute($sqlmail);
 			
 			
         }else{/*False error al insertar los datos*/
-             echo "Error al rechazar esta solicitud.";
+             echo "Error al cerrar esta solicitud.";
         }
         }
            //-----EMAIL-------
